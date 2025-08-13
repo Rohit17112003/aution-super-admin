@@ -1,0 +1,227 @@
+{
+  "navigation": [
+    {
+      "icon": "ri-dashboard-line",
+      "route": "/",
+      "label": "dashboard"
+    },
+    {
+      "icon": "ri-store-3-line",
+      "route": "/vendor-list",
+      "label": "vendor list"
+    },
+    {
+      "icon": "ri-user-3-line",
+      "route": "/bidder-list",
+      "label": "bidder list"
+    },
+    {
+      "icon": "ri-group-line",
+      "route": "/marketing-partner-list",
+      "label": "marketing partner list"
+    },
+    {
+      "icon": "ri-hand-heart-line",
+      "route": "/social-organization-list",
+      "label": "social organization list"
+    },
+    {
+      "icon": "ri-money-dollar-circle-line",
+      "label": "payment management",
+      "subMenu": [
+        {
+          "icon": "ri-stack-line",
+          "route": "/payment-management/total-sales",
+          "label": "Total Sales"
+        },
+        {
+          "icon": "ri-wallet-line",
+          "route": "/payment-management/vendor-payment",
+          "label": "Vendor Payment"
+        },
+        {
+          "icon": "ri-hand-heart-line",
+          "route": "/payment-management/mktg-partner-payment",
+          "label": "Mktg Partner Payment"
+        },
+        {
+          "icon": "ri-building-line",
+          "route": "/payment-management/social-org-payment",
+          "label": "Social Org Payment"
+        },
+        {
+          "icon": "ri-price-tag-3-line",
+          "route": "/payment-management/vendor-discount-sales",
+          "label": "vendor discount sales"
+        },
+        {
+          "icon": "ri-file-check-line",
+          "route": "/payment-management/tax-exemption-form",
+          "label": "tax exemption form"
+        }
+      ]
+    },
+    {
+      "icon": "ri-calendar-check-line",
+      "route": "/product-approval",
+      "label": "product approval"
+    },
+    {
+      "icon": "ri-briefcase-line",
+      "route": "/add-new-vendor",
+      "label": "add new vendor"
+    },
+    {
+      "icon": "ri-user-add-line",
+      "route": "/add-new-bidder",
+      "label": "add new bidder"
+    },
+    {
+      "icon": "ri-list-check",
+      "route": "/subscription-plans",
+      "label": "subscription plans"
+    },
+    {
+      "icon": "ri-history-line",
+      "route": "/auction-history",
+      "label": "auction history"
+    },
+    {
+      "icon": "ri-file-text-line",
+      "route": "/tax-exemption-document",
+      "label": "tax exemption document"
+    },
+    {
+      "icon": "ri-arrow-go-back-line",
+      "route": "/refund-request",
+      "label": "refund request"
+    },
+    {
+      "icon": "ri-question-line",
+      "route": "/queries",
+      "label": "queries"
+    }
+  ],
+  "stats": [
+    {
+      "icon": "ri-nurse-line",
+      "title": "No of Auction Product",
+      "value": "20"
+    },
+    {
+      "icon": "ri-nurse-line",
+      "title": "No of Successful Auction",
+      "value": "30"
+    },
+    {
+      "icon": "ri-nurse-line",
+      "title": "Value of auction sale",
+      "value": "20,00,000 INR"
+    },
+    {
+      "icon": "ri-nurse-line",
+      "title": "Balance no of auction",
+      "value": "20"
+    },
+    {
+      "icon": "ri-nurse-line",
+      "title": "No of Auction Product",
+      "value": "20"
+    },
+    {
+      "icon": "ri-nurse-line",
+      "title": "No of Successful Auction",
+      "value": "30"
+    },
+    {
+      "icon": "ri-nurse-line",
+      "title": "Value of auction sale",
+      "value": "20, 000"
+    },
+    {
+      "icon": "ri-nurse-line",
+      "title": "Balance no of auction",
+      "value": "2000 INR"
+    },
+    {
+      "icon": "ri-nurse-line",
+      "title": "No of Auction Product",
+      "value": "20"
+    },
+    {
+      "icon": "ri-nurse-line",
+      "title": "No of Successful Auction",
+      "value": "30"
+    },
+    {
+      "icon": "ri-nurse-line",
+      "title": "Value of auction sale",
+      "value": "20, 000"
+    },
+    {
+      "icon": "ri-nurse-line",
+      "title": "Balance no of auction",
+      "value": "2000 INR"
+    },
+    {
+      "icon": "ri-nurse-line",
+      "title": "No of Auction Product",
+      "value": "20"
+    },
+    {
+      "icon": "ri-nurse-line",
+      "title": "No of Successful Auction",
+      "value": "30"
+    },
+    {
+      "icon": "ri-nurse-line",
+      "title": "Value of auction sale",
+      "value": "20, 000"
+    },
+    {
+      "icon": "ri-nurse-line",
+      "title": "Balance no of auction",
+      "value": "2000 INR"
+    },
+    {
+      "icon": "ri-nurse-line",
+      "title": "No of Auction Product",
+      "value": "20"
+    },
+    {
+      "icon": "ri-nurse-line",
+      "title": "No of Successful Auction",
+      "value": "30"
+    },
+    {
+      "icon": "ri-nurse-line",
+      "title": "Value of auction sale",
+      "value": "20, 000"
+    },
+    {
+      "icon": "ri-nurse-line",
+      "title": "Balance no of auction",
+      "value": "2000 INR"
+    },
+    {
+      "icon": "ri-nurse-line",
+      "title": "No of Auction Product",
+      "value": "20"
+    },
+    {
+      "icon": "ri-nurse-line",
+      "title": "No of Successful Auction",
+      "value": "30"
+    },
+    {
+      "icon": "ri-nurse-line",
+      "title": "Value of auction sale",
+      "value": "20, 000"
+    },
+    {
+      "icon": "ri-nurse-line",
+      "title": "Balance no of auction",
+      "value": "2000 INR"
+    }
+  ]
+}
