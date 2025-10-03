@@ -9,15 +9,15 @@ const TotalSales = () => {
     <>
       <BannerButton route="/" label="Total Sales" />
 
-      <section className="mt-6 mb-10 w-full rounded-xl bg-white shadow">
+      <section className="mt-6 mb-10 w-full rounded-xl bg-light shadow">
         <SearchBar placeholder="Search here..." />
        
 
         {/* Table */}
         <div className="overflow-x-auto">
-          <table className="w-[1000px] text-sm  text-left text-gray-800">
-            <thead className="bg-gray-100 ">
-              <tr className="text-[1rem] font-bold tracking-wide">
+          <table className="w-[1000px] text-sm  text-left text-text">
+            <thead className="bg-[#F1F4F9] ">
+              <tr className="text-[1rem]  tracking-wide text-text">
                 <th className="whitespace-nowrap px-3 py-3 font-semibold">Bidder ID</th>
                 <th className="whitespace-nowrap px-3 py-3 font-semibold">Auction ID</th>
 
@@ -40,17 +40,17 @@ const TotalSales = () => {
                 <th></th>
                 <th></th>
 
-                <th className="px-2">Item Price</th>
-                <th className="px-2">GST</th>
-                <th className="px-2">Total</th>
+                <th className="px-2 text-nowrap font-medium text-[0.9rem] pb-2">Item Price</th>
+                <th className="px-2 font-medium text-[0.9rem] pb-2">GST</th>
+                <th className="px-2 font-medium text-[0.9rem] pb-2">Total</th>
 
-                <th className="px-2">Platform</th>
-                <th className="px-2">GST</th>
-                <th className="px-2">Total</th>
+                <th className="px-2 font-medium text-[0.9rem] pb-2">Platform</th>
+                <th className="px-2 font-medium text-[0.9rem] pb-2">GST</th>
+                <th className="px-2 font-medium text-[0.9rem] pb-2">Total</th>
 
-                <th className="px-2">Transaction</th>
-                <th className="px-2">GST</th>
-                <th className="px-2">Total</th>
+                <th className="px-2 font-medium text-[0.9rem] pb-2">Transaction</th>
+                <th className="px-2 font-medium text-[0.9rem] pb-2">GST</th>
+                <th className="px-2 font-medium text-[0.9rem] pb-2">Total</th>
 
                 <th></th>
                 <th></th>

@@ -1,42 +1,51 @@
 "use client";
 import SearchBar from "@/components/molecules/Search";
 
-const TaxPanding = () => {
+const TaxIssued = () => {
   return (
     <>
       <section className="mt-6 mb-10 w-full">
         <SearchBar placeholder="Search here..." />
         <div className="overflow-x-auto">
-          <table className="text-text min-w-[900px] w-full text-sm text-center">
-            <thead className="bg-gray-100 font-semibold">
+          <table className="text-text min-w-[900px] w-full text-[1rem] font-nunito text-center">
+            <thead className="bg-[#F1F4F9] font-semibold">
               <tr>
-                <th className="px-4 py-4">Organization Name</th>
-                <th className="px-4 py-4">Auction ID</th>
-                <th className="px-4 py-4">Vendor ID</th>
-                <th className="px-4 py-4">Donation Date</th>
-                <th className="px-4 py-4">Exemption Amount</th>
-                <th className="px-4 py-4">Download 10BE</th>
+                <th className="px-2 py-4">Organization Name</th>
+                <th className="px-2 py-4">Auction ID</th>
+                <th className="px-2 py-4">Vendor ID</th>
+                <th className="px-2 py-4">Issued Date</th>
+                <th className="px-2 py-4">Donation Amount</th>
+                <th className="px-2 py-4">Exemption Amount</th>
+                <th className="px-2 py-4">Download 10BE</th>
               </tr>
             </thead>
             <tbody>
               {data.map(
                 (
-                  { organizationName, auctionId, vendorId, donationDate, exemptionAmount },
+                  {
+                    organizationName,
+                    auctionId,
+                    vendorId,
+                    issuedDate,
+                    exemptionAmount,
+                    donationAmount,
+                  },
                   index
                 ) => (
                   <tr
                     key={index}
                     className={`${
                       index !== data.length - 1 ? "border-b border-lightgray" : ""
-                    }`}
+                    } text-[#202224] text-[0.9rem]`}
                   >
-                    <td className="px-4 py-6 font-medium">{organizationName}</td>
-                    <td className="px-4 py-6 font-medium">{auctionId}</td>
-                    <td className="px-4 py-6 font-medium">{vendorId}</td>
-                    <td className="px-4 py-6 font-medium">{donationDate}</td>
-                    <td className="px-4 py-6 font-medium">₹{exemptionAmount}</td>
+                    <td className="px-4 py-6 font-semibold">{organizationName}</td>
+                    <td className="px-4 py-6 font-semibold">{auctionId}</td>
+                    <td className="px-4 py-6 font-semibold">{vendorId}</td>
+                    <td className="px-4 py-6 font-semibold">{issuedDate}</td>
+                    <td className="px-4 py-6 font-semibold">{donationAmount}</td>
+                    <td className="px-4 py-6 font-semibold">{exemptionAmount}</td>
                     <td className="px-4 py-6">
-                       <span
+                      <span
                         className="inline-flex items-center gap-1 rounded px-3 py-1 bg-primary text-light text-sm font-medium hover:bg-primary/90 transition cursor-pointer"
                       >
                         <i className="ri-download-2-line text-lg font-light"></i> PDF
@@ -53,35 +62,39 @@ const TaxPanding = () => {
   );
 };
 
-export default TaxPanding;
+export default TaxIssued;
 
 const data = [
   {
     organizationName: "Janiv Jagruti Foundation",
-    auctionId: "AUC_7890",
-    vendorId: "VEND_3456",
-    donationDate: "01 Aug 2023",
-    exemptionAmount: "5,00,000",
+    auctionId: "AU_23456",
+    vendorId: "AU_23456",
+    issuedDate: "04 Sep 2019",
+    exemptionAmount: "5,00,000 INR",
+    donationAmount:"5,00,000 INR",
   },
   {
     organizationName: "Janiv Jagruti Foundation",
-    auctionId: "AUC_7891",
-    vendorId: "VEND_3456",
-    donationDate: "10 Sep 2023",
-    exemptionAmount: "5,00,000",
+    auctionId: "AU_23456",
+    vendorId: "AU_23456",
+    issuedDate: "28 May 2019",
+    exemptionAmount: "5,00,000 INR",
+    donationAmount:"5,00,000 INR",
   },
   {
     organizationName: "Janiv Jagruti Foundation",
-    auctionId: "AUC_7892",
-    vendorId: "VEND_3456",
-    donationDate: "15 Sep 2023",
-    exemptionAmount: "5,00,000",
+    auctionId: "AU_23456",
+    vendorId: "AU_23456",
+    issuedDate: "28 May 2019",
+    exemptionAmount: "5,00,000 INR",
+    donationAmount:"5,00,000 INR",
   },
   {
     organizationName: "Janiv Jagruti Foundation",
-    auctionId: "AUC_7893",
-    vendorId: "VEND_3456",
-    donationDate: "20 Sep 2023",
-    exemptionAmount: "5,00,000",
+    auctionId: "AU_23456",
+    vendorId: "AU_23456",
+    issuedDate: "05 Feb 2019",
+    exemptionAmount: "5,00,000 INR",
+    donationAmount:"5,00,000 INR",
   },
 ];

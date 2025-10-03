@@ -6,11 +6,11 @@ const VendorPayment = () => {
   return (
     <>
       <BannerButton route="/" label="Vendor Payment for Auction Sales" />
-      <section className="mt-6 mb-10 w-full rounded-xl bg-white shadow">
+      <section className="mt-6 mb-10 w-full rounded-xl bg-light shadow">
         <SearchBar placeholder="Search here..." />
         <div className="overflow-x-auto">
           <table className="text-text w-full min-w-max text-sm ">
-            <thead className="bg-gray-100 text-center font-semibold">
+            <thead className="bg-[#F1F4F9] text-center font-semibold">
               <tr>
                 <th className="px-4 py-4">Auction ID</th>
                 <th className="px-4 py-4">Vendor ID</th>
@@ -41,11 +41,7 @@ const VendorPayment = () => {
                     <td className="px-4 py-6 font-medium">{city}</td>
                     <td className="px-4 py-6">
                       <span
-                        className={`inline-block w-[100%] rounded px-2 py-1 text-sm font-medium capitalize ${
-                          status === "pending"
-                            ? "bg-red-100 text-red-600"
-                            : "bg-teal-100 text-teal-600"
-                        }`}
+                        className={`inline-block w-[100%] rounded px-2 py-1 text-sm font-medium capitalize bg-teal-100 text-teal-600`}
                       >
                         {status}
                       </span>
@@ -80,7 +76,7 @@ const data = [
     transactionDate: "10 Sep 2023",
     amount: 2500,
     city: "Mumbai",
-    status: "pending",
+    status: "completed",
   },
   {
     auctionId: "AUCTION003",

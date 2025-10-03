@@ -26,6 +26,11 @@
       "label": "social organization list"
     },
     {
+      "icon": "ri-calendar-check-line",
+      "route": "/product-approval",
+      "label": "product approval"
+    },
+    {
       "icon": "ri-money-dollar-circle-line",
       "label": "payment management",
       "subMenu": [
@@ -62,9 +67,51 @@
       ]
     },
     {
-      "icon": "ri-calendar-check-line",
-      "route": "/product-approval",
-      "label": "product approval"
+      "icon": "ri-contract-line",
+      "label": "commissions",
+      "subMenu": [
+        {
+          "icon": "ri-store-2-line",
+          "route": "/commissions/vendor-commission",
+          "label": "Vendor Commission"
+        },
+        {
+          "icon": "ri-auction-line",
+          "route": "/commissions/bidder-commission",
+          "label": "Bidder Commission"
+        },
+        {
+          "icon": "ri-megaphone-line",
+          "route": "/commissions/mktg-partner-commission",
+          "label": "Mktg Partner Commission"
+        },
+        {
+          "icon": "ri-heart-2-line",
+          "route": "/commissions/dilse-commission",
+          "label": "DilSe Commission"
+        }
+      ]
+    },
+    {
+      "icon": "ri-folder-2-line",
+      "label": "other",
+      "subMenu": [
+        {
+          "icon": "ri-bill-line",
+          "route": "/other/tax-exemption-doc",
+          "label": "Tax Exemption Doc."
+        },
+        {
+          "icon": "ri-lightbulb-flash-line",
+          "route": "/other/new-scheme",
+          "label": "New Scheme"
+        },
+        {
+          "icon": "ri-survey-line",
+          "route": "/other/surveys-polls",
+          "label": "Surveys & polls"
+        }
+      ]
     },
     {
       "icon": "ri-briefcase-line",
@@ -87,11 +134,6 @@
       "label": "auction history"
     },
     {
-      "icon": "ri-file-text-line",
-      "route": "/tax-exemption-document",
-      "label": "tax exemption document"
-    },
-    {
       "icon": "ri-arrow-go-back-line",
       "route": "/refund-request",
       "label": "refund request"
@@ -105,123 +147,123 @@
   "stats": [
     {
       "icon": "ri-nurse-line",
-      "title": "No of Auction Product",
+      "title": "No. of Vendors",
+      "value": "203"
+    },
+    {
+      "icon": "ri-nurse-line",
+      "title": "No. of Bidders",
+      "value": "203"
+    },
+    {
+      "icon": "ri-nurse-line",
+      "title": "No. of Social Partners",
+      "value": "100"
+    },
+    {
+      "icon": "ri-nurse-line",
+      "title": "No. of Marketing Partners",
+      "value": "100"
+    },
+    {
+      "icon": "ri-nurse-line",
+      "title": "Total Auctions",
+      "value": "2,000"
+    },
+    {
+      "icon": "ri-nurse-line",
+      "title": "Total Successful Auctions",
       "value": "20"
     },
     {
       "icon": "ri-nurse-line",
-      "title": "No of Successful Auction",
-      "value": "30"
+      "title": "Total Auction Sales",
+      "value": "2,00,000 INR"
     },
     {
       "icon": "ri-nurse-line",
-      "title": "Value of auction sale",
-      "value": "20,00,000 INR"
+      "title": "Outstanding from Bidders",
+      "value": "20 INR"
     },
     {
       "icon": "ri-nurse-line",
-      "title": "Balance no of auction",
+      "title": "Vendor Payment Till Date",
+      "value": "20 INR"
+    },
+    {
+      "icon": "ri-nurse-line",
+      "title": "Vendor Payment Outstanding",
+      "value": "20 INR"
+    },
+    {
+      "icon": "ri-nurse-line",
+      "title": "Vendor Commission",
+      "value": "20 INR"
+    },
+    {
+      "icon": "ri-nurse-line",
+      "title": "Marketing Partner payment Till Date",
       "value": "20"
     },
     {
       "icon": "ri-nurse-line",
-      "title": "No of Auction Product",
+      "title": "Outstanding Payment To Marketing Partners",
       "value": "20"
     },
     {
       "icon": "ri-nurse-line",
-      "title": "No of Successful Auction",
-      "value": "30"
-    },
-    {
-      "icon": "ri-nurse-line",
-      "title": "Value of auction sale",
-      "value": "20, 000"
-    },
-    {
-      "icon": "ri-nurse-line",
-      "title": "Balance no of auction",
-      "value": "2000 INR"
-    },
-    {
-      "icon": "ri-nurse-line",
-      "title": "No of Auction Product",
+      "title": "Payment to Social Organizations",
       "value": "20"
     },
     {
       "icon": "ri-nurse-line",
-      "title": "No of Successful Auction",
-      "value": "30"
-    },
-    {
-      "icon": "ri-nurse-line",
-      "title": "Value of auction sale",
-      "value": "20, 000"
-    },
-    {
-      "icon": "ri-nurse-line",
-      "title": "Balance no of auction",
-      "value": "2000 INR"
-    },
-    {
-      "icon": "ri-nurse-line",
-      "title": "No of Auction Product",
+      "title": "Outstanding Payment To Social Organizations",
       "value": "20"
     },
     {
       "icon": "ri-nurse-line",
-      "title": "No of Successful Auction",
-      "value": "30"
-    },
-    {
-      "icon": "ri-nurse-line",
-      "title": "Value of auction sale",
-      "value": "20, 000"
-    },
-    {
-      "icon": "ri-nurse-line",
-      "title": "Balance no of auction",
-      "value": "2000 INR"
-    },
-    {
-      "icon": "ri-nurse-line",
-      "title": "No of Auction Product",
+      "title": "Vendors nearing expiry in 30 days",
       "value": "20"
     },
     {
       "icon": "ri-nurse-line",
-      "title": "No of Successful Auction",
-      "value": "30"
-    },
-    {
-      "icon": "ri-nurse-line",
-      "title": "Value of auction sale",
-      "value": "20, 000"
-    },
-    {
-      "icon": "ri-nurse-line",
-      "title": "Balance no of auction",
-      "value": "2000 INR"
-    },
-    {
-      "icon": "ri-nurse-line",
-      "title": "No of Auction Product",
+      "title": "Tax Exemption Forms Pending",
       "value": "20"
     },
     {
       "icon": "ri-nurse-line",
-      "title": "No of Successful Auction",
-      "value": "30"
+      "title": "Complaints/ Cancellations",
+      "value": "20"
     },
     {
       "icon": "ri-nurse-line",
-      "title": "Value of auction sale",
-      "value": "20, 000"
+      "title": "Queries Outstanding",
+      "value": "20"
     },
     {
       "icon": "ri-nurse-line",
-      "title": "Balance no of auction",
-      "value": "2000 INR"
+      "title": "No of Discount Coupons issued",
+      "value": "20"
+    },
+    {
+      "icon": "ri-nurse-line",
+      "title": "Number Of Discount Coupons Redeemed",
+      "value": "20"
+    },
+    {
+      "icon": "ri-nurse-line",
+      "title": "Value of Discount Sales",
+      "value": "20"
+    },
+    {
+      "icon": "ri-nurse-line",
+      "title": "Total Transaction Fee Through Discount",
+      "value": "20"
+    },
+    {
+      "icon": "ri-nurse-line",
+      "title": "Total transaction Fees Earned Till Date",
+      "value": "20"
     }
   ]
 }

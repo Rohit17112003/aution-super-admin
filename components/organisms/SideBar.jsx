@@ -3,7 +3,7 @@ import nav from "@/public/database/nav.json";
 import Link from "next/link";
 import { usePathname, useRouter } from "next/navigation";
 import DashboardLink from "../atoms/DashboardLink";
-import LogoutModal from "../pages/LogOut"; 
+import LogoutModal from "../pages/LogOut";
 
 const SideBar = ({ isSidebarOpen, setIsSidebarOpen }) => {
   const path = usePathname();
@@ -24,14 +24,14 @@ const SideBar = ({ isSidebarOpen, setIsSidebarOpen }) => {
   return (
     <>
       <div
-        className={`fixed inset-y-0 left-0 z-30 transform bg-white shadow transition-transform duration-300 md:relative md:translate-x-0 ${
+        className={`fixed inset-y-0 left-0 z-30 transform bg-white transition-transform duration-300 md:relative md:translate-x-0 ${
           isSidebarOpen ? "translate-x-0" : "-translate-x-full"
-        } w-[270px] md:w-[20%] `}
+        } w-[270px] md:w-[21%]`}
       >
         <nav className="flex h-full flex-col gap-7 py-4">
           <div className="flex px-4">
             <Link href="/">
-              <h1 className="text-2xl font-bold cursor-pointer">LOGO</h1>
+              <h1 className="cursor-pointer text-2xl font-semibold font-poppins">LOGO</h1>
             </Link>
           </div>
 

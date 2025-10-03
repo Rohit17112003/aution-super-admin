@@ -29,19 +29,19 @@ const DashboardLink = ({
           onClick={onParentClick}
           className={`${
             active
-              ? "bg-darkyellow/90 text-light"
-              : "bg-transparent text-dark"
-          } flex w-full flex-row items-center justify-between rounded-md px-3 py-2.5 transition-all duration-200 hover:bg-lightyellow/10 hover:text-darkyellow`}
+              ? "bg-[#E7B01033] text-[#E7B010]"
+              : "bg-transparent text-[#4D525F] "
+          } flex w-full flex-row items-center justify-between rounded-md px-3 py-2.5 transition-all duration-200 hover:bg-[#E7B01033]/30 hover:text-[#E7B010]/80`}
         >
           <span className="text-md flex items-center gap-1.5">
             <i className={`${heroIcon} ri-lg font-light`}></i>
-            <span className="font-medium capitalize">{label}</span>
+            <span className="font-urbanist text-[1.05rem] font-semibold capitalize ">{label}</span>
           </span>
           {subMenu.length > 0 && (
             <span className="text-sm font-medium capitalize">
               <i
                 className={`${
-                  active ? "text-dark" : ""
+                  active ? "text-[#4D525F]" : ""
                 } ${
                   isSubMenuOpen
                     ? "ri-arrow-down-s-line"
@@ -65,14 +65,14 @@ const DashboardLink = ({
               key={index}
               href={item.route}
               onClick={handleClick} 
-              className="ms-4 flex w-[85%] flex-row items-center rounded-md px-3 py-2 bg-transparent text-dark font-medium transition-all duration-200 hover:bg-lightyellow/10 hover:text-darkyellow"
+              className="ms-4 flex w-[98%] flex-row items-center rounded-md px-3 py-2 bg-transparent text-[#4D525F] font-medium transition-all duration-200 hover:bg-[#E7B01033]/30 hover:text-[#E7B010]/80"
             >
               <span>
                 <i
                   className={`${item.icon} ri-lg font-light pr-2`}
                 ></i>
               </span>
-              <span className="text-sm font-medium capitalize">
+              <span className="text-[1rem] font-medium capitalize text-[#4D525F] ">
                 {item.label}
               </span>
             </Link>

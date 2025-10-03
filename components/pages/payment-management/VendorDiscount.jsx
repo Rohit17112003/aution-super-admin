@@ -5,15 +5,15 @@ import SearchBar from "@/components/molecules/Search";
 const VendorDiscount = () => {
   return (
     <>
-      <BannerButton route="/" label="Vendor Discount Sales" />
-      <section className="mt-6 mb-10 w-full rounded-xl bg-white shadow">
+      <BannerButton route="/" label="Vendor Payment for Discount Sales" />
+      <section className="mt-6 mb-10 w-full rounded-xl bg-light shadow">
         <SearchBar placeholder="Search here..." />
         <div className="overflow-x-auto">
-          <table className="text-text w-[1000px] md:w-full text-sm ">
-            <thead className="bg-gray-100 text-center font-semibold">
+          <table className="text-text w-[1000px] md:w-full text-[1rem] font-nunito">
+            <thead className="bg-[#F1F4F9] text-center font-semibold">
               <tr>
                 <th className="px-4 py-4">Discount Code</th>
-                <th className="px-4 py-4">Dis. Invoice Number</th>
+                <th className=" py-4">Dis. Invoice Number</th>
                 <th className="px-4 py-4">Vendor Name</th>
                 <th className="px-4 py-4">Date</th>
                 <th className="px-4 py-4">Product</th>
@@ -50,21 +50,21 @@ const VendorDiscount = () => {
                         index !== data.length - 1
                           ? "border-lightgray border-b"
                           : ""
-                      } text-center`}
+                      } text-center text-[0.9rem] text-[#202224]`}
                     >
-                      <td className="px-4 py-6 font-medium">{discountCode}</td>
-                      <td className="px-4 py-6 font-medium">{invoiceNumber}</td>
-                      <td className="px-4 py-6 font-medium capitalize">
+                      <td className=" py-6 font-semibold">{discountCode}</td>
+                      <td className=" py-6 font-semibold">{invoiceNumber}</td>
+                      <td className=" py-6 font-semibold capitalize">
                         {vendorName}
                       </td>
-                      <td className="px-4 py-6 font-medium">{date}</td>
-                      <td className="px-4 py-6 font-medium">{product}</td>
-                      <td className="px-4 py-6 font-medium">{unit}</td>
-                      <td className="px-4 py-6 font-medium">₹{price}</td>
-                      <td className="px-4 py-6 font-medium">₹{discount}</td>
-                      <td className="px-4 py-6 font-medium">₹{gst}</td>
-                      <td className="px-4 py-6 font-medium">₹{total}</td>
-                      <td className="px-4 py-6 font-medium">₹{commission}</td>
+                      <td className=" py-6 font-semibold text-nowrap">{date}</td>
+                      <td className=" py-6 font-semibold">{product}</td>
+                      <td className=" py-6 font-semibold">{unit}</td>
+                      <td className=" py-6 font-semibold">{price}</td>
+                      <td className=" py-6 font-semibold">{discount}</td>
+                      <td className=" py-6 font-semibold">{gst}</td>
+                      <td className=" py-6 font-semibold">{total}</td>
+                      <td className=" py-6 font-semibold">{commission}</td>
                     </tr>
                   );
                 }
@@ -81,55 +81,55 @@ export default VendorDiscount;
 
 const data = [
   {
-    discountCode: "DISC001",
-    invoiceNumber: "INV12345",
-    vendorName: "Vedant Sharma",
-    date: "01 Aug 2023",
-    product: "Laptop",
-    unit: 2,
-    price: 50000,
-    discount: 5000,
-    gst: 9000,
-    total: 54000,
-    commission: 2000,
-  },
-  {
-    discountCode: "DISC002",
-    invoiceNumber: "INV45678",
-    vendorName: "Aarav Singh",
-    date: "10 Sep 2023",
-    product: "Mobile Phone",
-    unit: 1,
-    price: 30000,
-    discount: 3000,
-    gst: 5400,
-    total: 32400,
-    commission: 1500,
-  },
-  {
-    discountCode: "DISC003",
-    invoiceNumber: "INV78912",
-    vendorName: "Riya Patel",
-    date: "15 Sep 2023",
-    product: "Headphones",
+    discountCode: "AU_23456",
+    invoiceNumber: "AU_23456",
+    vendorName: "Vedant",
+    date: "04 Sep 2019",
+    product: "TV",
     unit: 3,
-    price: 9000,
-    discount: 900,
-    gst: 1620,
-    total: 9720,
-    commission: 500,
+    price: "5,000 INR",
+    discount: "5,00 INR",
+    gst: "5,00 INR",
+    total: "5,000 INR",
+    commission: "5,000 INR",
   },
   {
-    discountCode: "DISC004",
-    invoiceNumber: "INV32165",
-    vendorName: "Dev Kumar",
-    date: "20 Sep 2023",
-    product: "Smartwatch",
+    discountCode: "AU_23456",
+    invoiceNumber: "AU_23456",
+    vendorName: "Vedant",
+    date: "28 May 2019",
+    product: "TV",
     unit: 2,
-    price: 20000,
-    discount: 2000,
-    gst: 3600,
-    total: 21600,
-    commission: 1000,
+    price: "5,000 INR",
+    discount: "5,00 INR",
+    gst: "5,00 INR",
+    total: "5,000 INR",
+    commission: "5,000 INR",
+  },
+  {
+    discountCode: "AU_23456",
+    invoiceNumber: "AU_23456",
+    vendorName: "Vedant",
+    date: "28 May 2019",
+    product: "TV",
+    unit: 6,
+    price: "5,000 INR",
+    discount: "5,00 INR",
+    gst: "5,00 INR",
+    total:"5,000 INR",
+    commission: "5,000 INR",
+  },
+  {
+    discountCode: "AU_23456",
+    invoiceNumber: "AU_23456",
+    vendorName: "Vedant",
+    date: "05 Feb 2019",
+    product: "TV",
+    unit: 2,
+    price: "5,000 INR",
+    discount: "5,00 INR",
+    gst: "5,00 INR",
+    total: "5,000 INR",
+    commission: "5,000 INR",
   },
 ];

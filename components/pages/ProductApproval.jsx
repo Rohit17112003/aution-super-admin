@@ -25,7 +25,7 @@ const auctions = [
     name: "Mohit Sen",
     carName: "Ambassador Car",
     auctionNo: "845464",
-    date: "21-Aug-2025",
+    date: "21-Aug-24",
     price: "₹ 18,590",
   },
   {
@@ -33,7 +33,7 @@ const auctions = [
     name: "Mohit Sen",
     carName: "Ambassador Car",
     auctionNo: "845464",
-    date: "21-Aug-2025",
+    date: "21-Aug-24",
     price: "₹ 18,590",
   },
   {
@@ -41,7 +41,7 @@ const auctions = [
     name: "Mohit Sen",
     carName: "Ambassador Car",
     auctionNo: "845464",
-    date: "21-Aug-2025",
+    date: "21-Aug-24",
     price: "₹ 18,590",
   },
 ];

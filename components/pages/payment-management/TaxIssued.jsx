@@ -7,15 +7,16 @@ const TaxIssued = () => {
       <section className="mt-6 mb-10 w-full">
         <SearchBar placeholder="Search here..." />
         <div className="overflow-x-auto">
-          <table className="text-text min-w-[900px] w-full text-sm text-center">
-            <thead className="bg-gray-100 font-semibold">
+          <table className="text-text min-w-[900px] w-full text-[1rem] font-nunito text-center">
+            <thead className="bg-[#F1F4F9] font-semibold">
               <tr>
-                <th className="px-4 py-4">Organization Name</th>
-                <th className="px-4 py-4">Auction ID</th>
-                <th className="px-4 py-4">Vendor ID</th>
-                <th className="px-4 py-4">Issued Date</th>
-                <th className="px-4 py-4">Exemption Amount</th>
-                <th className="px-4 py-4">Download 10BE</th>
+                <th className="px-3 py-4">Organization Name</th>
+                <th className="px-3 py-4">Auction ID</th>
+                <th className="px-3 py-4">Vendor ID</th>
+                <th className="px-3 py-4">Issued Date</th>
+                <th className="px-3 py-4">Donation Amount</th>
+                <th className="px-3 py-4">Exemption Amount</th>
+                <th className="px-3 py-4">Download 10BE</th>
               </tr>
             </thead>
             <tbody>
@@ -27,6 +28,7 @@ const TaxIssued = () => {
                     vendorId,
                     issuedDate,
                     exemptionAmount,
+                    donationAmount,
                   },
                   index
                 ) => (
@@ -34,13 +36,14 @@ const TaxIssued = () => {
                     key={index}
                     className={`${
                       index !== data.length - 1 ? "border-b border-lightgray" : ""
-                    }`}
+                    } text-[#202224] text-[0.9rem]`}
                   >
-                    <td className="px-4 py-6 font-medium">{organizationName}</td>
-                    <td className="px-4 py-6 font-medium">{auctionId}</td>
-                    <td className="px-4 py-6 font-medium">{vendorId}</td>
-                    <td className="px-4 py-6 font-medium">{issuedDate}</td>
-                    <td className="px-4 py-6 font-medium">₹{exemptionAmount}</td>
+                    <td className="px-4 py-6 font-semibold">{organizationName}</td>
+                    <td className="px-4 py-6 font-semibold">{auctionId}</td>
+                    <td className="px-4 py-6 font-semibold">{vendorId}</td>
+                    <td className="px-4 py-6 font-semibold">{issuedDate}</td>
+                    <td className="px-4 py-6 font-semibold">{donationAmount}</td>
+                    <td className="px-4 py-6 font-semibold">{exemptionAmount}</td>
                     <td className="px-4 py-6">
                       <span
                         className="inline-flex items-center gap-1 rounded px-3 py-1 bg-primary text-light text-sm font-medium hover:bg-primary/90 transition cursor-pointer"
@@ -64,30 +67,34 @@ export default TaxIssued;
 const data = [
   {
     organizationName: "Janiv Jagruti Foundation",
-    auctionId: "AUC_3456",
-    vendorId: "VEND_1122",
-    issuedDate: "01 Aug 2023",
-    exemptionAmount: "5,00,000",
+    auctionId: "AU_23456",
+    vendorId: "AU_23456",
+    issuedDate: "04 Sep 2019",
+    exemptionAmount: "5,00,000 INR",
+    donationAmount:"5,00,000 INR",
   },
   {
     organizationName: "Janiv Jagruti Foundation",
-    auctionId: "AUC_9876",
-    vendorId: "VEND_3344",
-    issuedDate: "10 Sep 2023",
-    exemptionAmount: "5,00,000",
+    auctionId: "AU_23456",
+    vendorId: "AU_23456",
+    issuedDate: "28 May 2019",
+    exemptionAmount: "5,00,000 INR",
+    donationAmount:"5,00,000 INR",
   },
   {
     organizationName: "Janiv Jagruti Foundation",
-    auctionId: "AUC_2468",
-    vendorId: "VEND_5566",
-    issuedDate: "15 Sep 2023",
-    exemptionAmount: "5,00,000",
+    auctionId: "AU_23456",
+    vendorId: "AU_23456",
+    issuedDate: "28 May 2019",
+    exemptionAmount: "5,00,000 INR",
+    donationAmount:"5,00,000 INR",
   },
   {
     organizationName: "Janiv Jagruti Foundation",
-    auctionId: "AUC_1357",
-    vendorId: "VEND_7788",
-    issuedDate: "20 Sep 2023",
-    exemptionAmount: "5,00,000",
+    auctionId: "AU_23456",
+    vendorId: "AU_23456",
+    issuedDate: "05 Feb 2019",
+    exemptionAmount: "5,00,000 INR",
+    donationAmount:"5,00,000 INR",
   },
 ];

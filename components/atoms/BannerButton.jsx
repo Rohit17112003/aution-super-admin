@@ -7,8 +7,8 @@ const BannerButton = ({ label, route, title }) => {
       <Link href={route}>
         <i className="ri-arrow-left-line ri-lg"></i>
       </Link>
-      <div>
-        <p className="text-lg font-semibold md:text-xl">{label}</p>
+      <div className=" font-poppins">
+        <p className="text-lg font-medium md:text-xl tracking-wide">{label}</p>
         <p className="text-sm font-medium tracking-wide md:text-[0.9rem] md:pr-80">{title}</p>
       </div>
     </div>
