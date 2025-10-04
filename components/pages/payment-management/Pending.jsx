@@ -4,17 +4,17 @@ import SearchBar from "@/components/molecules/Search";
 const Pending = () => {
   return (
     <>
-      <section className="mt-6 mb-10 w-full">
+      <section className="mt-6 mb-10 w-full px-4">
         <SearchBar placeholder="Search here..." />
         <div className="overflow-x-auto">
           <table className="text-text md:w-full w-[900px] text-[1rem] text-center font-nunito">
             <thead className="bg-[#F1F4F9] font-semibold">
               <tr>
-                <th className="px-4 py-4">Organization Name</th>
+                <th className="px-4 py-4 rounded-l-xl">Organization Name</th>
                 <th className="px-4 py-4">Social Organization ID</th>
                 <th className="px-4 py-4">Transaction Date</th>
                 <th className="px-4 py-4">Paid Value</th>
-                <th className="px-4 py-4">Status</th>
+                <th className="px-4 py-4 rounded-r-xl">Status</th>
               </tr>
             </thead>
             <tbody>

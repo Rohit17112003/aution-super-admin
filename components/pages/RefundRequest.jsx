@@ -6,19 +6,19 @@ const RefundRequest = () => {
   return (
     <>
       <BannerButton route="/" label="Refund Request" />
-      <section className="mt-6 w-full rounded-xl bg-white shadow mb-10">
+      <section className="mt-6 w-full rounded-xl bg-white shadow mb-10 px-4">
         <SearchBar placeholder="Search here..." />
         <div className="overflow-x-auto">
           <table className="text-text md:w-full w-[1000px] text-sm ">
             <thead className="bg-gray-100 text-center font-semibold">
               <tr>
-                <th className="px-4 py-4">Auction ID</th>
+                <th className="px-4 py-4 rounded-l-xl">Auction ID</th>
                 <th className="px-4 py-4">Vendor ID</th>
                 <th className="px-4 py-4">Bidder ID</th>
                 <th className="px-4 py-4">Transaction Date</th>
                 <th className="px-4 py-4">Amount</th>
                 <th className="px-4 py-4">Process Refund</th>
-                <th className="px-4 py-4">Status</th>
+                <th className="px-4 py-4 rounded-l-xl">Status</th>
               </tr>
             </thead>
             <tbody>

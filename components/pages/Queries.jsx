@@ -6,18 +6,18 @@ const Queries = () => {
   return (
     <>
       <BannerButton route="/" label="Queries" />
-      <section className="mt-6 mb-10 w-full rounded-xl bg-light shadow">
+      <section className="mt-6 mb-10 w-full rounded-xl bg-light shadow px-4">
         <SearchBar placeholder="Search here..." />
         <div className="overflow-x-auto">
           <table className="text-text md:w-full w-[1000px] text-[1rem] font-nunito">
             <thead className="bg-[#F1F4F9] text-start font-semibold">
               <tr>
-                <th className="px-4 py-4">User ID</th>
+                <th className="px-4 py-4 rounded-l-xl">User ID</th>
                 <th className="px-4 py-4 text-start">Query</th>
                 <th className="px-6 py-4 text-start">Date</th>
                 <th className="px-6 py-4 text-start">Email ID</th>
-                <th className="px-6 py-4">Mo. Number</th>
-                <th className="px-6 py-4">Status</th>
+                <th className="px-6 py-4 text-nowrap">Mo. Number</th>
+                <th className="px-6 py-4 rounded-r-xl">Status</th>
               </tr>
             </thead>
             <tbody>

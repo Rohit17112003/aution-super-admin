@@ -6,18 +6,18 @@ const MarketingPartnerList = () => {
   return (
     <>
       <BannerButton route="/" label="Marketing Partner List" />
-      <section className="mt-6 w-full rounded-xl bg-light shadow mb-10">
+      <section className="mt-6 w-full rounded-xl bg-light shadow mb-10 px-4">
         <SearchBar placeholder="Search here..." />
         <div className="overflow-x-auto">
           <table className="text-text w-full text-sm ">
             <thead className="bg-[#F1F4F9] text-center font-semibold">
               <tr>
-                <th className="px-4 py-4">Marketing Partner ID</th>
+                <th className="px-4 py-4 rounded-l-xl">Marketing Partner ID</th>
                 <th className="px-4 py-4">Name</th>
                 <th className="px-4 py-4">Joining Date</th>
                 <th className="px-4 py-4">Email ID</th>
                 <th className="px-4 py-4">Mobile No.</th>
-                <th className="px-4 py-4">City</th>
+                <th className="px-4 py-4 rounded-r-xl">City</th>
               </tr>
             </thead>
             <tbody>

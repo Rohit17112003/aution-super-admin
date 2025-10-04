@@ -11,7 +11,7 @@ const SignIn = () => {
 
   return (
     <main>
-      <section className="fixed grid h-screen w-full bg-gradient-to-b from-[#fff6a9c4] to-[#ecd8a2c4] lg:grid-cols-2">
+      <section className="fixed grid h-screen w-full bg-gradient-to-b from-[#FFF6A9] to-[#ECD8A2] lg:grid-cols-2">
         <div className="flex flex-col items-center gap-1 px-5 py-10">
           <Image
             className="h-32 w-32 bg-cover"
@@ -71,7 +71,7 @@ const SignIn = () => {
           </form>
         </div>
 
-        <div className="hidden h-screen items-center justify-center bg-gradient-to-b from-[#0078D4] to-[#3D48B7] lg:flex">
+        <div className="hidden h-screen items-center justify-center bg-gradient-to-b from-[#E7B010] to-[#E7B010] lg:flex">
           <div className="relative h-[80%] w-[70%] rounded-xl border border-white/40 bg-white/30 p-10 backdrop-blur backdrop-brightness-95">
             <Image
               className="absolute bottom-16 -left-8 h-16 w-16 object-cover"
@@ -81,14 +81,14 @@ const SignIn = () => {
               height={100}
             />
             <Image
-              className="absolute right-0 bottom-0 h-[85%] object-cover"
+              className="absolute -right-10 bottom-0 h-[85%] object-cover"
               src="/image/man.png"
               alt="man"
               width={1200}
               height={1200}
             />
-            <h2 className="w-[80%] text-3xl font-semibold text-white">
-              Lorem ipsum dolor sit amet consectetur.
+            <h2 className="w-[68%] text-3xl font-semibold text-white leading-12 font-urbanist tracking-wide">
+             Lorem Ipsum is simply dummy text of the printing and typesetting industry.
             </h2>
           </div>
         </div>

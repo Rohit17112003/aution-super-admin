@@ -4,19 +4,19 @@ import SearchBar from "@/components/molecules/Search";
 const TaxIssued = () => {
   return (
     <>
-      <section className="mt-6 mb-10 w-full">
+      <section className="mt-6 mb-10 w-full px-4">
         <SearchBar placeholder="Search here..." />
         <div className="overflow-x-auto">
           <table className="text-text min-w-[900px] w-full text-[1rem] font-nunito text-center">
             <thead className="bg-[#F1F4F9] font-semibold">
               <tr>
-                <th className="px-3 py-4">Organization Name</th>
+                <th className="px-3 py-4 rounded-l-xl">Organization Name</th>
                 <th className="px-3 py-4">Auction ID</th>
                 <th className="px-3 py-4">Vendor ID</th>
                 <th className="px-3 py-4">Issued Date</th>
                 <th className="px-3 py-4">Donation Amount</th>
                 <th className="px-3 py-4">Exemption Amount</th>
-                <th className="px-3 py-4">Download 10BE</th>
+                <th className="px-3 py-4 rounded-r-xl">Download 10BE</th>
               </tr>
             </thead>
             <tbody>

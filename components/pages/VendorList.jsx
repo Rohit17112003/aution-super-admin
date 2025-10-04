@@ -6,20 +6,20 @@ const VendorList = () => {
   return (
     <>
       <BannerButton route="/" label="Vendor List" />
-      <section className="mt-6 w-full rounded-xl bg-light shadow mb-10">
+      <section className="mt-6 w-full rounded-xl bg-light shadow mb-10 px-4">
         <SearchBar placeholder="Search here..." />
         <div className="overflow-x-auto">
           <table className="text-text w-full text-sm text-nowrap">
             <thead className="bg-[#F1F4F9] text-center font-semibold">
               <tr>
-                <th className="px-4 py-4">Auction ID</th>
+                <th className="px-4 py-4 rounded-l-xl">Auction ID</th>
                 <th className="px-4 py-4">Name</th>
                 <th className="px-4 py-4">Start Date</th>
                 <th className="px-4 py-4">End Date</th>
                 <th className="px-4 py-4">Email ID</th>
                 <th className="px-4 py-4">Mobile No.</th>
                 <th className="px-4 py-4">City</th>
-                <th className="px-4 py-4">Category</th>
+                <th className="px-4 py-4 rounded-r-xl">Category</th>
               </tr>
             </thead>
             <tbody>

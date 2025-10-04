@@ -4,17 +4,17 @@ import SearchBar from "@/components/molecules/Search";
 const TotalPayments = () => {
   return (
     <>
-      <section className="mt-6 mb-10 w-full">
+      <section className="mt-6 mb-10 w-full px-4">
         <SearchBar placeholder="Search here..." />
         <div className="overflow-x-auto">
           <table className="text-text md:w-full w-[900px] text-sm text-center font-nunito">
             <thead className="bg-[#F1F4F9] font-semibold text-[1rem]">
               <tr>
-                <th className="px-4 py-4">Vendor ID</th>
+                <th className="px-4 py-4 rounded-l-xl">Vendor ID</th>
                 <th className="px-4 py-4">Commission Type</th>
                 <th className="px-4 py-4">Transaction Date</th>
                 <th className="px-4 py-4">Commission Amount</th>
-                <th className="px-4 py-4">Status</th>
+                <th className="px-4 py-4 rounded-r-xl">Status</th>
               </tr>
             </thead>
             <tbody>

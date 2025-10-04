@@ -72,7 +72,7 @@ const DashboardLink = ({
                   className={`${item.icon} ri-lg font-light pr-2`}
                 ></i>
               </span>
-              <span className="text-[1rem] font-medium capitalize text-[#4D525F] ">
+              <span className="text-[1rem] font-medium capitalize ">
                 {item.label}
               </span>
             </Link>

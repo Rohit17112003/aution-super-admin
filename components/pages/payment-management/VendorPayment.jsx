@@ -6,19 +6,19 @@ const VendorPayment = () => {
   return (
     <>
       <BannerButton route="/" label="Vendor Payment for Auction Sales" />
-      <section className="mt-6 mb-10 w-full rounded-xl bg-light shadow">
+      <section className="mt-6 mb-10 w-full rounded-xl bg-light shadow px-4">
         <SearchBar placeholder="Search here..." />
         <div className="overflow-x-auto">
           <table className="text-text w-full min-w-max text-sm ">
             <thead className="bg-[#F1F4F9] text-center font-semibold">
               <tr>
-                <th className="px-4 py-4">Auction ID</th>
+                <th className="px-4 py-4 rounded-l-xl">Auction ID</th>
                 <th className="px-4 py-4">Vendor ID</th>
                 <th className="px-4 py-4">Vendor</th>
                 <th className="px-4 py-4">Transaction Date</th>
                 <th className="px-4 py-4">Paid Value</th>
                 <th className="px-4 py-4">City</th>
-                <th className="px-4 py-4">Status</th>
+                <th className="px-4 py-4 rounded-r-xl">Status</th>
               </tr>
             </thead>
             <tbody>
