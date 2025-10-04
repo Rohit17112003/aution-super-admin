@@ -19,7 +19,7 @@ const paidPlans = [
     bgHeader: "bg-lightyellow",
     bgBody: "bg-darkyellow",
     highlight: "12 months 5000 INR",
-    feature:"List 25 products/services",
+    feature:"List 500 products/services",
     features: [
       "Listing per day - 5 products per auction day",
       "Benefits - Refer and earn vendors (10% for basic and 20% for premium vendors)",
