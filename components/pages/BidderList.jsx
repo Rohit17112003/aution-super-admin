@@ -1,13 +1,38 @@
 "use client";
+import React, { useState } from "react";
 import BannerButton from "@/components/atoms/BannerButton";
 import SearchBar from "@/components/molecules/Search";
 
 const BidderList = () => {
+  const [search, setSearch] = useState("");
+  const [selectedFilter, setSelectedFilter] = useState(""); // optional for future filters
+
+  // Example: if you want to filter by city
+  const filterOptions = [...new Set(data.map((item) => item.city))];
+
+  // Filter data based on search input and selected filter
+  const filteredData = data.filter((item) => {
+    return (
+      (item.name.toLowerCase().includes(search.toLowerCase()) ||
+       item.bidderId.toLowerCase().includes(search.toLowerCase()) ||
+       item.city.toLowerCase().includes(search.toLowerCase())) &&
+      (selectedFilter ? item.city === selectedFilter : true)
+    );
+  });
+
   return (
     <>
       <BannerButton route="/" label="Bidder List" />
       <section className="mt-6 w-full rounded-xl bg-light shadow mb-10 px-4">
-        <SearchBar placeholder="Search here..." />
+        <SearchBar
+          placeholder="Search by name, bidder ID or city..."
+          value={search}
+          onChange={setSearch}
+          filterOptions={filterOptions} // optional city filter
+          selectedFilter={selectedFilter}
+          setSelectedFilter={setSelectedFilter}
+        />
+
         <div className="overflow-x-auto">
           <table className="text-text w-full text-sm text-nowrap">
             <thead className="bg-[#F1F4F9] text-center font-semibold">
@@ -21,21 +46,11 @@ const BidderList = () => {
               </tr>
             </thead>
             <tbody>
-              {data.map(
-                (
-                  {
-                    bidderId,
-                    name,
-                    joiningDate,
-                    email,
-                    mobile,
-                    city,
-                  },
-                  index,
-                ) => (
+              {filteredData.map(
+                ({ bidderId, name, joiningDate, email, mobile, city }, index) => (
                   <tr
                     key={index}
-                    className={`${index !== data.length - 1 ? "border-b border-lightgray" : ""} text-center`}
+                    className={`${index !== filteredData.length - 1 ? "border-b border-lightgray" : ""} text-center`}
                   >
                     <td className="px-4 py-6 font-medium">{bidderId}</td>
                     <td className="px-4 py-6 font-medium">{name}</td>
@@ -56,6 +71,7 @@ const BidderList = () => {
 
 export default BidderList;
 
+// Sample Data
 const data = [
   {
     bidderId: "USR123",

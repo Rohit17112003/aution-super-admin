@@ -1,41 +1,62 @@
 "use client";
-
+import React, { useState } from "react";
 import BannerButton from "@/components/atoms/BannerButton";
 import SearchBar from "@/components/molecules/Search";
 
 const TotalSales = () => {
+  const [search, setSearch] = useState("");
+  const [selectedFilter, setSelectedFilter] = useState("");
+
+  // Status filter options
+  const filterOptions = [...new Set(data.map((item) => item.status))];
+
+  // Filter data based on search and selected status
+  const filteredData = data.filter((item) => {
+    return (
+      (item.bidderId.toLowerCase().includes(search.toLowerCase()) ||
+       item.auctionId.toLowerCase().includes(search.toLowerCase())) &&
+      (selectedFilter ? item.status === selectedFilter : true)
+    );
+  });
 
   return (
     <>
       <BannerButton route="/" label="Total Sales" />
 
       <section className="mt-6 mb-10 w-full rounded-xl bg-light shadow px-1">
-        <SearchBar placeholder="Search here..." />
-        {/* Table */}
-        <div className="overflow-auto">
-          <table className="w-[1000px] text-sm  text-left text-text">
-            <thead className="bg-[#F1F4F9] ">
-              <tr className="text-[1rem]  tracking-wide text-text">
-                <th className=" px-1 py-3 font-semibold rounded-tl-xl">Bidder ID</th>
-                <th className=" px-1 py-3 font-semibold">Auction ID</th>
+        <SearchBar
+          placeholder="Search by Bidder ID or Auction ID..."
+          value={search}
+          onChange={setSearch}
+          filterOptions={filterOptions}  // Status filter
+          selectedFilter={selectedFilter}
+          setSelectedFilter={setSelectedFilter}
+        />
 
-                <th colSpan={3} className=" px-1 py-3 font-semibold text-center">
+        <div className="overflow-auto">
+          <table className="w-[1000px] text-sm text-left text-text">
+            <thead className="bg-[#F1F4F9]">
+              <tr className="text-[1rem] tracking-wide text-text">
+                <th className="px-1 py-3 font-semibold rounded-tl-xl">Bidder ID</th>
+                <th className="px-1 py-3 font-semibold">Auction ID</th>
+
+                <th colSpan={3} className="px-1 py-3 font-semibold text-center">
                   Vendor Price INR
                 </th>
-                <th colSpan={3} className=" px-1 py-3 font-semibold text-center">
+                <th colSpan={3} className="px-1 py-3 font-semibold text-center">
                   Start Price INR
                 </th>
-                <th colSpan={3} className=" px-1 py-3 font-semibold text-center">
+                <th colSpan={3} className="px-1 py-3 font-semibold text-center">
                   Final Price INR
                 </th>
 
-                <th className=" px-1 py-3 font-semibold">Transaction Date</th>
-                <th className=" px-1 py-3 font-semibold rounded-tr-xl">Status</th>
+                <th className="px-1 py-3 font-semibold">Transaction Date</th>
+                <th className="px-1 py-3 font-semibold rounded-tr-xl">Status</th>
               </tr>
 
               {/* Sub-headers */}
-              <tr className="bg-gray-100  text-center text-sm font-light tracking-wide text-text">
-                <th className="rounded-bl-xl"></th>
+              <tr className="bg-gray-100 text-center text-sm font-light tracking-wide text-text">
+                <th className=" rounded-bl-xl"></th>
                 <th></th>
 
                 <th className="px-1 text-nowrap font-medium text-[0.9rem] pb-2">Item Price</th>
@@ -51,28 +72,14 @@ const TotalSales = () => {
                 <th className="px-1 font-medium text-[0.9rem] pb-2">Total</th>
 
                 <th></th>
-                <th className="rounded-br-xl"></th>
+                <th className=" rounded-br-xl"></th>
               </tr>
             </thead>
 
             <tbody>
-              {data.map(
-                (
-                  {
-                    bidderId,
-                    auctionId,
-                    vendorPrice,
-                    startPrice,
-                    finalPrice,
-                    transactionDate,
-                    status,
-                  },
-                  index
-                ) => (
-                  <tr
-                    key={index}
-                    className={`border-b border-lightgray text-center`}
-                  >
+              {filteredData.map(
+                ({ bidderId, auctionId, vendorPrice, startPrice, finalPrice, transactionDate, status }, index) => (
+                  <tr key={index} className="border-b border-lightgray text-center">
                     <td className="px-1 py-4 font-medium">{bidderId}</td>
                     <td className="px-1 py-4 font-medium">{auctionId}</td>
 
@@ -92,7 +99,9 @@ const TotalSales = () => {
 
                     <td className="px-1 py-4">
                       <span
-                        className={` rounded py-1 text-sm font-medium capitalize px-2  bg-green-100`}
+                        className={`rounded py-1 text-sm font-medium capitalize px-2 ${
+                          status === "pending" ? "bg-red-100 text-red-600" : "bg-green-100 text-green-600"
+                        }`}
                       >
                         {status}
                       </span>

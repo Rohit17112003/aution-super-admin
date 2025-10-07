@@ -1,71 +1,77 @@
 "use client";
+import React, { useState } from "react";
 import BannerButton from "@/components/atoms/BannerButton";
 import SearchBar from "@/components/molecules/Search";
 
 const RefundRequest = () => {
+  const [search, setSearch] = useState("");
+  const [selectedFilter, setSelectedFilter] = useState("");
+
+  const filterOptions = [...new Set(data.map((item) => item.status))];
+
+  const filteredData = data.filter(
+    (item) =>
+      (item.auctionId.toLowerCase().includes(search.toLowerCase()) ||
+        item.bidderId.toLowerCase().includes(search.toLowerCase()) ||
+        item.customer.toLowerCase().includes(search.toLowerCase())) &&
+      (selectedFilter ? item.status === selectedFilter : true)
+  );
+
   return (
     <>
       <BannerButton route="/" label="Refund Request" />
       <section className="mt-6 w-full rounded-xl bg-white shadow mb-10 px-4">
-        <SearchBar placeholder="Search here..." />
+        <SearchBar
+          placeholder="Search by Auction ID, Bidder ID or Customer..."
+          value={search}
+          onChange={setSearch}
+          filterOptions={filterOptions}
+          selectedFilter={selectedFilter}
+          setSelectedFilter={setSelectedFilter}
+        />
         <div className="overflow-x-auto">
-          <table className="text-text md:w-full w-[1000px] text-sm ">
-            <thead className="bg-gray-100 text-center font-semibold">
+          <table className="text-text md:w-full w-[1000px] text-sm text-center">
+            <thead className="bg-gray-100 font-semibold">
               <tr>
                 <th className="px-4 py-4 rounded-l-xl">Auction ID</th>
                 <th className="px-4 py-4">Vendor ID</th>
-                <th className="px-4 py-4">Bidder ID</th>
+                <th className="px-4 py-4">Customer</th>
                 <th className="px-4 py-4">Transaction Date</th>
                 <th className="px-4 py-4">Amount</th>
                 <th className="px-4 py-4">Process Refund</th>
-                <th className="px-4 py-4 rounded-l-xl">Status</th>
+                <th className="px-4 py-4 rounded-r-xl">Status</th>
               </tr>
             </thead>
             <tbody>
-              {data.map(
-                (
-                  {
-                    auctionId,
-                    bidderId,
-                    customer,
-                    transactionDate,
-                    amount,
-                    status,
-                  },
-                  index,
-                ) => {
-                  return (
-                    <tr
-                      key={index}
-                      className={`${
-                        index !== data.length - 1 ? "border-b border-lightgray" : ""
-                      } text-center`}
-                    >
-                      <td className="px-4 py-6 font-medium">{auctionId}</td>
-                      <td className="px-4 py-6 font-medium">{bidderId}</td>
-                      <td className="px-4 py-6 font-medium capitalize">{customer}</td>
-                      <td className="px-4 py-6 font-medium">{transactionDate}</td>
-                      <td className="px-4 py-6 font-medium">₹{amount}</td>
-                      <td className="px-4 py-6 font-medium">
-                        {/* Example Process buttons */}
-                        <button className="mr-2 rounded bg-lightyellow px-3 py-1 text-light hover:bg-yellow">
-                          Refund Amount
-                        </button>
-                      </td>
-                      <td className="px-4 py-6">
-                        <span
-                          className={`inline-block w-[100%] rounded px-2 py-1 text-sm font-medium capitalize ${
-                            status === "pending"
-                              ? "bg-red-100 text-red-600"
-                              : "bg-teal-100 text-teal-600"
-                          }`}
-                        >
-                          {status}
-                        </span>
-                      </td>
-                    </tr>
-                  );
-                },
+              {filteredData.map(
+                ({ auctionId, bidderId, customer, transactionDate, amount, status }, index) => (
+                  <tr
+                    key={index}
+                    className={`${index !== filteredData.length - 1 ? "border-b border-lightgray" : ""}`}
+                  >
+                    <td className="px-4 py-6 font-medium">{auctionId}</td>
+                    <td className="px-4 py-6 font-medium">{bidderId}</td>
+                    <td className="px-4 py-6 font-medium capitalize">{customer}</td>
+                    <td className="px-4 py-6 font-medium">{transactionDate}</td>
+                    <td className="px-4 py-6 font-medium">₹{amount}</td>
+                    <td className="px-4 py-6 font-medium">
+                      <button className="mr-2 rounded bg-lightyellow px-3 py-1 text-light hover:bg-yellow">
+                        Refund Amount
+                      </button>
+                    </td>
+                    <td className="px-4 py-6">
+                      <span
+                        className={`inline-block w-full rounded px-2 py-1 text-sm font-medium capitalize ${
+                          status === "pending"
+                            ? "bg-red-100 text-red-600"
+                            : "bg-teal-100 text-teal-600"
+                        }`}
+                      >
+                        {status}
+                      </span>
+                    </td>
+                  </tr>
+                )
               )}
             </tbody>
           </table>
@@ -84,7 +90,7 @@ const data = [
     customer: "Vedant",
     transactionDate: "04 Sep 2019",
     amount: 500,
-    status: "completed",
+    status: "Completed",
   },
   {
     auctionId: "HJKL7821",
@@ -92,7 +98,7 @@ const data = [
     customer: "Aarav",
     transactionDate: "12 Oct 2020",
     amount: 1200,
-    status: "completed",
+    status: "Completed",
   },
   {
     auctionId: "GHTY5689",
@@ -100,7 +106,7 @@ const data = [
     customer: "Riya",
     transactionDate: "22 Jan 2021",
     amount: 300,
-    status: "pending",
+    status: "Pending",
   },
   {
     auctionId: "POIU3456",
@@ -108,6 +114,6 @@ const data = [
     customer: "Dev",
     transactionDate: "03 Mar 2023",
     amount: 900,
-    status: "completed",
+    status: "Completed",
   },
 ];

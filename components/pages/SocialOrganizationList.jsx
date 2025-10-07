@@ -1,15 +1,40 @@
 "use client";
+import React, { useState } from "react";
 import BannerButton from "@/components/atoms/BannerButton";
 import SearchBar from "@/components/molecules/Search";
 
-const MarketingPartnerList = () => {
+const SocialOrganizationList = () => {
+  const [search, setSearch] = useState("");
+  const [selectedFilter, setSelectedFilter] = useState(""); // optional city filter
+
+  // Unique cities for filter dropdown
+  const filterOptions = [...new Set(data.map((item) => item.city))];
+
+  // Filter data based on search input and selected city
+  const filteredData = data.filter((item) => {
+    return (
+      (item.name.toLowerCase().includes(search.toLowerCase()) ||
+       item.email.toLowerCase().includes(search.toLowerCase()) ||
+       item.city.toLowerCase().includes(search.toLowerCase())) &&
+      (selectedFilter ? item.city === selectedFilter : true)
+    );
+  });
+
   return (
     <>
       <BannerButton route="/" label="Marketing Partner List" />
       <section className="mt-6 w-full rounded-xl bg-light shadow mb-10 px-4">
-        <SearchBar placeholder="Search here..." />
+        <SearchBar
+          placeholder="Search by name, email or city..."
+          value={search}
+          onChange={setSearch}
+          filterOptions={filterOptions} // optional city filter
+          selectedFilter={selectedFilter}
+          setSelectedFilter={setSelectedFilter}
+        />
+
         <div className="overflow-x-auto">
-          <table className="text-text w-full text-sm ">
+          <table className="text-text w-full text-sm">
             <thead className="bg-[#F1F4F9] text-center font-semibold">
               <tr>
                 <th className="px-4 py-4 rounded-l-xl">Organization Name</th>
@@ -20,10 +45,10 @@ const MarketingPartnerList = () => {
               </tr>
             </thead>
             <tbody>
-              {data.map(({ name, joiningDate, email, mobile, city }, index) => (
+              {filteredData.map(({ name, joiningDate, email, mobile, city }, index) => (
                 <tr
                   key={index}
-                  className={`${index !== data.length - 1 ? "border-b border-lightgray" : ""} text-center`}
+                  className={`${index !== filteredData.length - 1 ? "border-b border-lightgray" : ""} text-center`}
                 >
                   <td className="px-4 py-6 font-medium">{name}</td>
                   <td className="px-4 py-6 font-medium">{joiningDate}</td>
@@ -40,7 +65,7 @@ const MarketingPartnerList = () => {
   );
 };
 
-export default MarketingPartnerList;
+export default SocialOrganizationList;
 
 const data = [
   {

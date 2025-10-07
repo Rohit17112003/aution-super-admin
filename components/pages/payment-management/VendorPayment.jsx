@@ -1,13 +1,35 @@
 "use client";
+import React, { useState } from "react";
 import BannerButton from "@/components/atoms/BannerButton";
 import SearchBar from "@/components/molecules/Search";
 
 const VendorPayment = () => {
+  const [search, setSearch] = useState("");
+  const [selectedFilter, setSelectedFilter] = useState("");
+
+  const filterOptions = [...new Set(data.map((item) => item.status))];
+
+  const filteredData = data.filter((item) => {
+    return (
+      (item.auctionId.toLowerCase().includes(search.toLowerCase()) ||
+        item.bidderId.toLowerCase().includes(search.toLowerCase()) ||
+        item.bidderName.toLowerCase().includes(search.toLowerCase())) &&
+      (selectedFilter ? item.status === selectedFilter : true)
+    );
+  });
+
   return (
     <>
       <BannerButton route="/" label="Vendor Payment for Auction Sales" />
       <section className="mt-6 mb-10 w-full rounded-xl bg-light shadow px-4">
-        <SearchBar placeholder="Search here..." />
+        <SearchBar
+          placeholder="Search by Auction ID, Vendor ID or Name..."
+          value={search}
+          onChange={setSearch}
+          filterOptions={filterOptions}
+          selectedFilter={selectedFilter}
+          setSelectedFilter={setSelectedFilter}
+        />
         <div className="overflow-x-auto">
           <table className="text-text w-full min-w-max text-sm ">
             <thead className="bg-[#F1F4F9] text-center font-semibold">
@@ -22,15 +44,12 @@ const VendorPayment = () => {
               </tr>
             </thead>
             <tbody>
-              {data.map(
-                (
-                  { auctionId, bidderId, bidderName, transactionDate, amount, city, status },
-                  index
-                ) => (
+              {filteredData.map(
+                ({ auctionId, bidderId, bidderName, transactionDate, amount, city, status }, index) => (
                   <tr
                     key={index}
                     className={`${
-                      index !== data.length - 1 ? "border-lightgray border-b" : ""
+                      index !== filteredData.length - 1 ? "border-lightgray border-b" : ""
                     } text-center`}
                   >
                     <td className="px-4 py-6 font-medium">{auctionId}</td>
@@ -41,7 +60,9 @@ const VendorPayment = () => {
                     <td className="px-4 py-6 font-medium">{city}</td>
                     <td className="px-4 py-6">
                       <span
-                        className={`inline-block w-[100%] rounded px-2 py-1 text-sm font-medium capitalize bg-teal-100 text-teal-600`}
+                        className={`inline-block w-[100%] rounded px-2 py-1 text-sm font-medium capitalize ${
+                          status === "pending" ? "bg-red-100 text-red-600" : "bg-teal-100 text-teal-600"
+                        }`}
                       >
                         {status}
                       </span>
@@ -85,7 +106,7 @@ const data = [
     transactionDate: "15 Sep 2023",
     amount: 1800,
     city: "Bangalore",
-    status: "completed",
+    status: "pending",
   },
   {
     auctionId: "AUCTION004",

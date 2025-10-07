@@ -1,13 +1,35 @@
 "use client";
+import React, { useState } from "react";
 import BannerButton from "@/components/atoms/BannerButton";
 import SearchBar from "@/components/molecules/Search";
 
 const Queries = () => {
+  const [search, setSearch] = useState("");
+  const [selectedFilter, setSelectedFilter] = useState("");
+
+  const filterOptions = [...new Set(data.map((item) => item.status))];
+
+  const filteredData = data.filter(
+    (item) =>
+      (item.userId.toLowerCase().includes(search.toLowerCase()) ||
+        item.query.toLowerCase().includes(search.toLowerCase()) ||
+        item.email.toLowerCase().includes(search.toLowerCase()) ||
+        item.mobile.toLowerCase().includes(search.toLowerCase())) &&
+      (selectedFilter ? item.status === selectedFilter : true)
+  );
+
   return (
     <>
       <BannerButton route="/" label="Queries" />
       <section className="mt-6 mb-10 w-full rounded-xl bg-light shadow px-4">
-        <SearchBar placeholder="Search here..." />
+        <SearchBar
+          placeholder="Search by User ID, Query, Email or Mobile..."
+          value={search}
+          onChange={setSearch}
+          filterOptions={filterOptions}
+          selectedFilter={selectedFilter}
+          setSelectedFilter={setSelectedFilter}
+        />
         <div className="overflow-x-auto">
           <table className="text-text md:w-full w-[1000px] text-[1rem] font-nunito">
             <thead className="bg-[#F1F4F9] text-start font-semibold">
@@ -21,38 +43,29 @@ const Queries = () => {
               </tr>
             </thead>
             <tbody>
-              {data.map(
-                (
-                  { userId, query, date, email, mobile, status },
-                  index
-                ) => (
-                  <tr
-                    key={index}
-                    className={`${
-                      index !== data.length - 1
-                        ? "border-lightgray border-b"
-                        : ""
-                    } text-center`}
-                  >
-                    <td className="px-4 py-6 font-medium">{userId}</td>
-                    <td className="px-4 py-6 font-medium text-start text-[0.85rem]">{query}</td>
-                    <td className="px-4 py-6 font-medium text-nowrap">{date}</td>
-                    <td className="px-4 py-6 font-medium">{email}</td>
-                    <td className="px-4 py-6 font-medium">{mobile}</td>
-                    <td className="px-4 py-6">
-                      <span
-                        className={`inline-block w-[100%] rounded px-2 py-1 text-sm font-medium capitalize ${
-                          status === "completed"
-                            ? "bg-[#EF3826]/15 text-[#EF3826]"
-                            : "bg-[#EF3826]/15 text-[#EF3826]"
-                        }`}
-                      >
-                        {status}
-                      </span>
-                    </td>
-                  </tr>
-                )
-              )}
+              {filteredData.map(({ userId, query, date, email, mobile, status }, index) => (
+                <tr
+                  key={index}
+                  className={`${index !== filteredData.length - 1 ? "border-lightgray border-b" : ""} text-center`}
+                >
+                  <td className="px-4 py-6 font-medium">{userId}</td>
+                  <td className="px-4 py-6 font-medium text-start text-[0.85rem]">{query}</td>
+                  <td className="px-4 py-6 font-medium text-nowrap">{date}</td>
+                  <td className="px-4 py-6 font-medium">{email}</td>
+                  <td className="px-4 py-6 font-medium">{mobile}</td>
+                  <td className="px-4 py-6">
+                    <span
+                      className={`inline-block w-full rounded px-2 py-1 text-sm font-medium capitalize ${
+                        status === "Completed"
+                          ? "bg-green-100 text-green-600"
+                          : "bg-yellow-100 text-yellow-600"
+                      }`}
+                    >
+                      {status}
+                    </span>
+                  </td>
+                </tr>
+              ))}
             </tbody>
           </table>
         </div>

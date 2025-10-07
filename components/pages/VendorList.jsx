@@ -1,13 +1,38 @@
 "use client";
+import React, { useState } from "react";
 import BannerButton from "@/components/atoms/BannerButton";
 import SearchBar from "@/components/molecules/Search";
 
 const VendorList = () => {
+  const [search, setSearch] = useState("");
+  const [selectedFilter, setSelectedFilter] = useState("");
+
+  // Unique categories for filter dropdown
+  const filterOptions = [...new Set(data.map((item) => item.category))];
+
+  // Filter data based on search and selected category
+  const filteredData = data.filter((item) => {
+    return (
+      (item.name.toLowerCase().includes(search.toLowerCase()) ||
+       item.auctionId.toLowerCase().includes(search.toLowerCase()) ||
+       item.city.toLowerCase().includes(search.toLowerCase())) &&
+      (selectedFilter ? item.category === selectedFilter : true)
+    );
+  });
+
   return (
     <>
       <BannerButton route="/" label="Vendor List" />
       <section className="mt-6 w-full rounded-xl bg-light shadow mb-10 px-4">
-        <SearchBar placeholder="Search here..." />
+        <SearchBar
+          placeholder="Search by name, auction ID or city..."
+          value={search}
+          onChange={setSearch}
+          filterOptions={filterOptions}
+          selectedFilter={selectedFilter}
+          setSelectedFilter={setSelectedFilter}
+        />
+
         <div className="overflow-x-auto">
           <table className="text-text w-full text-sm text-nowrap">
             <thead className="bg-[#F1F4F9] text-center font-semibold">
@@ -23,7 +48,7 @@ const VendorList = () => {
               </tr>
             </thead>
             <tbody>
-              {data.map(
+              {filteredData.map(
                 (
                   {
                     auctionId,
@@ -39,7 +64,7 @@ const VendorList = () => {
                 ) => (
                   <tr
                     key={index}
-                    className={`${index !== data.length - 1 ? "border-b border-lightgray" : ""} text-center`}
+                    className={`${index !== filteredData.length - 1 ? "border-b border-lightgray" : ""} text-center`}
                   >
                     <td className="px-4 py-6 font-medium">{auctionId}</td>
                     <td className="px-4 py-6 font-medium">{name}</td>
@@ -62,6 +87,7 @@ const VendorList = () => {
 
 export default VendorList;
 
+// Sample Data
 const data = [
   {
     auctionId: "HDYE7484",
